@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+    <title>TRIP PLANNER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/fwslider.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+            });
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+                        </div>
+                        <div class="menu">
+                            <ul class="nav" id="nav">
+                                <li class="current"><a href="{% url 'loggedin' %}">Home</a></li>
+                                
+                                <li><a href="{% url 'hot_deals' %}">Hot Deals</a></li>
+                                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <script type="text/javascript" src="{% static 'js/responsive-nav.js' %}"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div id="fwslider">
+            <div class="slider_container">
+                <div class="slide">
+                    <img src="{% static 'images/slider1.jpg' %}" class="img-responsive" alt=""/>
+                    <div class="slide_content">
+                        <div class="slide_content_wrap">
+                            <h1 class="title">Explore India</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="{% static 'images/slider2.jpg' %}" class="img-responsive" alt=""/>
+                    <div class="slide_content">
+                        <div class="slide_content_wrap">
+                            <h1 class="title">Explore India</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="{% static 'images/slider3.jpg' %}" class="img-responsive" alt=""/>
+                    <div class="slide_content">
+                        <div class="slide_content_wrap">
+                            <h1 class="title">Explore India</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timers"></div>
+            <div class="slidePrev"><span></span></div>
+            <div class="slideNext"><span></span></div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="container">
+            <h3 class="m_3">Explore India</h3>
+            <div class="row">
+                <div class="col-md-3 top_box">
+                    <div class="view view-ninth">
+                        <a href="{% url 'south_india' %}">
+                            <img src="{% static 'images/pic1.jpg' %}" class="img-responsive" alt=""/>
+                            <div class="mask mask-1"></div>
+                            <div class="mask mask-2"></div>
+                            <div class="content">
+                                <h2>South India</h2>
+                                <div class="center"><a href="#">Ayurveda, Backwaters, Scenery</a></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 top_box">
+                    <div class="view view-ninth">
+                        <a href="{% url 'kashmir' %}">
+                            <img src="{% static 'images/pic2.jpg' %}" class="img-responsive" alt=""/>
+                            <div class="mask mask-1"></div>
+                            <div class="mask mask-2"></div>
+                            <div class="content">
+                                <h2>Kashmir</h2>
+                                <div class="center"><a href="#">Mountains...</a></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 top_box">
+                    <div class="view view-ninth">
+                        <a href="{% url 'goa' %}">
+                            <img src="{% static 'images/pic3.jpg' %}" class="img-responsive" alt=""/>
+                            <div class="mask mask-1"></div>
+                            <div class="mask mask-2"></div>
+                            <div class="content">
+                                <h2>Goa</h2>
+                                <div class="center"><a href="#">Beaches...</a></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 top_box1">
+                    <div class="view view-ninth">
+                        <a href="{% url 'manali' %}">
+                            <img src="{% static 'images/pic4.jpg' %}" class="img-responsive" alt=""/>
+                            <div class="mask mask-1"></div>
+                            <div class="mask mask-2"></div>
+                            <div class="content">
+                                <h2>Manali</h2>
+                                <div class="center"><a href="#">Adventure...</a></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>QUICK LINKS</h4>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'contact_us' %}">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Destinations</h4>
+                        <li><a href="{% url 'varanasi' %}">Varanasi</a></li>
+                        <li><a href="{% url 'rajasthan' %}">Rajasthan</a></li>
+                        <li><a href="{% url 'kashmir' %}">Kashmir</a></li>
+                        <li><a href="{% url 'manali' %}">Manali</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Customer Support</h4>
+                        <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Newsletter</h4>
+                        <div class="footer_search">
+                            <form>
+                                <input type="text" placeholder="Enter your email">
+                                <input type="submit" value="Go">
+                            </form>
+                        </div>
+                        <ul class="social">
+                            <li><a href="#" class="facebook"><span></span></a></li>
+                            <li><a href="#" class="twitter"><span></span></a></li>
+                            <li><a href="#" class="instagram"><span></span></a></li>
+                            <li><a href="#" class="pinterest"><span></span></a></li>
+                            <li><a href="#" class="youtube"><span></span></a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer_bottom">
+                <div class="copy">
+                    <p>© 2019 Template by <a href="#">Trip Planner</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+    <title>TRIP PLANNER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/fwslider.js' %}"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Trip Planner Logo" /></a>
+                        </div>
+                        <div class="menu">
+                            <ul class="nav" id="nav">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li><a href="{% url 'contact_lo' %}">Contact Us</a></li>
+                                <li><a href="{% url 'signin' %}">Register</a></li>
+                                <li class="current"><a href="{% url 'loginforms' %}">Sign In</a></li>
+                            </ul>
+                            <script src="{% static 'js/responsive-nav.js' %}"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding:30px 30px;">
+        <form action="{% url 'loginforms' %}" method="post">
+            {% csrf_token %}
+            <h2>Login Form</h2>
+            <hr>
+            {% if error %}
+                <h2 style="color:red">{{ error }}</h2>
+            {% endif %}
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required><br><br>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+            <input type="checkbox" checked="checked" name="remember"> Remember me<br><br>
+
+            <button type="submit">Login</button>
+            <p>If you encounter problems signing in, <a href="{% url 'loggedin' %}">CLICK HERE</a></p>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>QUICK LINKS</h4>
+                        <li><a href="{% url 'index' %}">HOME</a></li>
+                        <li><a href="{% url 'contact_lo' %}">ABOUT US</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Destinations</h4>
+                        <li><a href="{% url 'varanasi_lo' %}">VARANASI</a></li>
+                        <li><a href="{% url 'rajasthan_lo' %}">RAJASTHAN</a></li>
+                        <li><a href="{% url 'kashmir_lo' %}">KASHMIR</a></li>
+                        <li><a href="{% url 'manali_lo' %}">MANALI</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Customer Support</h4>
+                        <li><a href="{% url 'contact_lo' %}">CONTACT US</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Newsletter</h4>
+                        <div class="footer_search">
+                            <form>
+                                <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+                                <input type="submit" value="Go">
+                            </form>
+                        </div>
+                        <ul class="social">
+                            <li class="facebook"><a href="#"><span> </span></a></li>
+                            <li class="twitter"><a href="#"><span> </span></a></li>
+                            <li class="instagram"><a href="#"><span> </span></a></li>
+                            <li class="pinterest"><a href="#"><span> </span></a></li>
+                            <li class="youtube"><a href="#"><span> </span></a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="row footer_bottom">
+                <div class="copy">
+                    <p>© 2019 Template by <a href="{% url 'index' %}">tripplanner</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

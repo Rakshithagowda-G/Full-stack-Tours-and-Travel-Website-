@@ -1,0 +1,218 @@
+
+<!-- <!DOCTYPE HTML>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Contact Us - Trip Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Trip Planner"></a>
+                        </div>
+                        <div class="menu">
+                            <ul class="nav">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li class="current"><a href="{% url 'contact1' %}">Contact Us</a></li>
+                                <li><a href="{% url 'signin' %}">Register</a></li>
+                                <li><a href="{% url 'loginforms' %}">Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="shop_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>Plan your trip with Trip Planner. Enjoy the trip at discounted rates. For any queries related to trip packages, feel free to contact us.</p>
+                        <div class="address">
+                            <p><strong>TRIP PLANNER</strong></p>
+                            <p>23, HAL ROAD, BANGALORE</p>
+                            <p>KARNATAKA</p>
+                            <p>Phone: +91 7907897867</p>
+                            <p>Email: <a href="mailto:support@tripplanner.com">support@tripplanner.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 contact">
+                        <form action="{% url 'contact1' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="Email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="msg" class="form-control" placeholder="Message" rows="4" required></textarea>
+                            </div>
+                             <button type="submit" class="btn btn-primary">Send</button> 
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Quick Links</h4>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'contact1' %}">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Destinations</h4>
+                        <li><a href="{% url 'varanasi_lo' %}">Varanasi</a></li>
+                        <li><a href="{% url 'rajasthan_lo' %}">Rajasthan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Customer Support</h4>
+                        <li><a href="{% url 'contact_lo' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Contact Us - Trip Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-left">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Trip Planner"></a>
+                        </div>
+                        <div class="menu">
+                            <ul class="nav">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                <li class="current"><a href="{% url 'contact1' %}">Contact Us</a></li>
+                                <li><a href="{% url 'signin' %}">Register</a></li>
+                                <li><a href="{% url 'loginforms' %}">Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="shop_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>Plan your trip with Trip Planner. Enjoy the trip at discounted rates. For any queries related to trip packages, feel free to contact us.</p>
+                        <div class="address">
+                            <p><strong>TRIP PLANNER</strong></p>
+                            <p>1st Main Vijaynagar Mysore</p>
+                            <p>KARNATAKA</p>
+                            <p>Phone: +91 8123890610</p>
+                            <p>Email: <a href="mailto:rakshithag043@gmail.com">support@tripplanner.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 contact">
+                        <!-- Display success or error message -->
+                        {% if message %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% elif error %}
+                            <div class="alert alert-danger">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+
+                        <!-- Contact Form -->
+                        <form action="{% url 'contact1' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="msg" class="form-control" placeholder="Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Quick Links</h4>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'contact1' %}">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Destinations</h4>
+                        <li><a href="{% url 'varanasi_lo' %}">Varanasi</a></li>
+                        <li><a href="{% url 'rajasthan_lo' %}">Rajasthan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer_box">
+                        <h4>Customer Support</h4>
+                        <li><a href="{% url 'contact_lo' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
